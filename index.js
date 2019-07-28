@@ -1,10 +1,11 @@
-var express = require('express');var cors = require('cors')
-var app     = express()
-var server  = app.listen(8000);
-var io      = require('socket.io').listen(server);
+const express = require('express');
+const cors    = require('cors')
+const app     = express()
+const PORT    = process.env.port || 8000
+const server  = app.listen(PORT);
+const io      = require('socket.io').listen(server);
 app.use(cors())
 
- 
 app.get('/', (req, res) => {
    res.send('Hello this is REST API')
 })
@@ -22,4 +23,4 @@ io.on('connection', function(socket){
   })
 })
 
-// app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
