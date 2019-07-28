@@ -1,9 +1,9 @@
-const express = require('express');
-const cors    = require('cors')
-const app     = express()
-const PORT    = process.env.port || 8000
-const server  = app.listen(PORT);
-const io      = require('socket.io').listen(server);
+var express = require('express');
+var cors    = require('cors')
+var app     = express()
+var PORT    = process.env.port || 8000
+var server  = app.listen(PORT);
+var io      = require('socket.io').listen(server);
 app.use(cors())
 
 app.get('/', (req, res) => {
