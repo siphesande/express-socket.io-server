@@ -1,7 +1,7 @@
 var express = require('express');
 var cors    = require('cors')
 var app     = express()
-var PORT    = process.env.port || 8000
+var port    = process.env.port || 8000
 var server  = app.listen(PORT);
 var io      = require('socket.io').listen(server);
 app.use(cors())
